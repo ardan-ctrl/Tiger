@@ -32,7 +32,7 @@ The site must:
 When implementation choices need to be made, follow this order:
 
 1. **Approved Paper Tiger mockups and layout guides** — primary authority for composition, proportions, visual rhythm, typography weight, color temperature, and overall feeling.
-2. **This README** — project-level creative, structural, technical, typographic, and color rules.
+2. **This README** — project-level creative, structural, technical, typographic, color, and interface rules.
 3. **`docs/ASSET_MAP.md`** — asset strategy: which section needs what type of artwork package.
 4. **`docs/EXPORT_CHECKLIST.md`** — exact export plan, filenames, and folder placement.
 5. **Uploaded Woset style reference** — foundational reference for the type/UI/color logic, adapted to the Paper Tiger mockups rather than followed mechanically.
@@ -646,7 +646,108 @@ When the site is implemented:
 
 ---
 
-## 12. Motion direction
+## 12. Spacing, shape, and interface grammar
+
+The Woset reference is useful here because it provides a disciplined **comfortable-density** logic: the site should breathe, interactive elements should feel soft rather than technical, and spacing should come from a coherent scale instead of random values.
+
+Paper Tiger should use that logic, but the **approved mockups remain the visual authority**.
+
+### 12.1 Spacing scale to keep available
+
+Use the Woset spacing scale as the default token pool for implementation:
+
+```txt
+6 / 9 / 10 / 11 / 14 / 15 / 20 / 22 / 30 / 48 / 60 px
+```
+
+Recommended semantic anchors:
+
+```txt
+22px — default internal gap between related UI elements
+14px — compact padding / micro-card padding reference
+48px — strong CTA/button horizontal breathing room when needed
+60px — macro gap reference between major grouped blocks, where compatible with the section mockup
+```
+
+These values should be centralized as CSS variables or theme tokens, but they must not mechanically override the actual Paper Tiger layout guides.
+
+### 12.2 Page rhythm and density
+
+The overall density should remain:
+
+```txt
+comfortable, spacious, composed
+```
+
+Implementation should preserve:
+
+- large breathing room around statements;
+- clear separation between major selling moments;
+- tightly controlled local spacing inside forms and cards;
+- a page that feels editorial and deliberate, not cramped and not empty by accident.
+
+### 12.3 Borders and surfaces
+
+Borrow the Woset discipline of **simple borders over decorative UI noise**:
+
+- prefer `1px` borders for inputs, subtle card divisions, and quiet utility boundaries;
+- use `Ink Black #000000` or `Muted Ash #bbbab7` as the primary border colors;
+- avoid inventing extra border colors or heavier strokes unless a specific mockup demands it.
+
+The approved Paper Tiger cards and forms may use a very subtle paper-on-paper separation treatment. Avoid glossy app-like elevation, heavy SaaS shadows, and overly polished glassmorphism.
+
+### 12.4 Radius policy
+
+The Woset system uses generous roundness as a softness principle. For Paper Tiger:
+
+- preserve **soft, approachable geometry**;
+- use a shared radius system rather than random one-off corners;
+- treat `30px` as an available reference radius for pill-like or strongly rounded UI where it visually matches the mockups;
+- do **not** blindly force every input, card, or button to `30px` if the approved Paper Tiger mockup uses a less pill-like shape.
+
+Mockup fidelity wins over mechanical token obedience.
+
+### 12.5 Forms and buttons
+
+The system-level lessons worth keeping:
+
+- inputs should be clearly outlined and simple;
+- buttons should be decisive and easy to scan;
+- primary submission moments should feel unmistakably actionable;
+- UI should support the illustrated world, not compete with it.
+
+For the current Paper Tiger mockups:
+
+- form fields stay light and outlined;
+- submit buttons are black, direct, and high-contrast;
+- the real form must remain HTML/CSS, even when the composition is visually matched to the hand-drawn guide.
+
+### 12.6 Cards
+
+The relevant Woset takeaway is not the product-card component itself, but the principle of:
+
+- simple surfaces;
+- clear spacing hierarchy;
+- restrained borders;
+- no unnecessary decoration.
+
+For Paper Tiger, apply this to the **two offer cards**:
+
+- keep them calm and readable;
+- preserve the approved hierarchy of title / explanation / “You get” / “We handle”;
+- avoid turning them into generic pricing cards or startup feature blocks.
+
+### 12.7 Icons and small UI marks
+
+Use the Woset guidance selectively:
+
+- icons should stay simple, outlined, and monochromatic when they are interface icons;
+- avoid glossy colored icon packs;
+- illustrated marks from the Paper Tiger world remain artwork assets, not UI iconography.
+
+---
+
+## 13. Motion direction
 
 Motion is important, but it should serve the Paper Tiger world rather than dominate it.
 
@@ -667,7 +768,7 @@ Motion is important, but it should serve the Paper Tiger world rather than domin
 
 ---
 
-## 13. Performance and responsive requirements
+## 14. Performance and responsive requirements
 
 The final website must:
 
@@ -682,7 +783,7 @@ Desktop composition should be perfected first. Mobile should then be adapted int
 
 ---
 
-## 14. Current open decisions / TBD
+## 15. Current open decisions / TBD
 
 These points are intentionally not finalized yet:
 
@@ -705,9 +806,16 @@ Warm paper background from the approved mockups and paper texture asset,
 with Ink Black / Muted Ash / Graphite / highly restrained Crayon Yellow as the practical UI palette.
 ```
 
+The spacing and interface grammar are **not** freeform:
+
+```txt
+Use the Woset comfortable-density logic, spacing scale, simple borders, and soft UI geometry,
+while allowing the approved Paper Tiger mockups to determine exact final proportions.
+```
+
 ---
 
-## 15. Immediate next step
+## 16. Immediate next step
 
 Use:
 
