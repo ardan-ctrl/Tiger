@@ -1,0 +1,538 @@
+{
+  "$schema": "./mockup-extraction-schema.json",
+  "sourceDir": "design/source-mockups",
+  "layoutGuideDir": "design/layout-guides",
+  "generatedCss": "styles/generated-art-layout.css",
+  "backgroundTolerance": 34,
+  "sections": [
+    {
+      "id": "hero",
+      "source": "01-hero-layout-guide.webp",
+      "assets": [
+        {
+          "name": "hero-tiger-left",
+          "output": "public/images/hero/hero-tiger-left.webp",
+          "selector": ".hero__asset--tiger",
+          "crop": [
+            0.01,
+            0.52,
+            0.24,
+            0.45
+          ]
+        },
+        {
+          "name": "hero-thought-left",
+          "output": "public/images/hero/hero-thought-left.webp",
+          "selector": ".hero__asset--thought-left",
+          "crop": [
+            0.16,
+            0.12,
+            0.18,
+            0.18
+          ]
+        },
+        {
+          "name": "hero-dental-scene",
+          "output": "public/images/hero/hero-dental-scene.webp",
+          "selector": ".hero__asset--dental",
+          "crop": [
+            0.31,
+            0.04,
+            0.21,
+            0.22
+          ]
+        },
+        {
+          "name": "hero-shoes-scene",
+          "output": "public/images/hero/hero-shoes-scene.webp",
+          "selector": ".hero__asset--shoes",
+          "crop": [
+            0.38,
+            0.7,
+            0.22,
+            0.23
+          ]
+        },
+        {
+          "name": "hero-cash-scene",
+          "output": "public/images/hero/hero-cash-scene.webp",
+          "selector": ".hero__asset--cash",
+          "crop": [
+            0.68,
+            0.08,
+            0.22,
+            0.23
+          ]
+        },
+        {
+          "name": "hero-thought-right",
+          "output": "public/images/hero/hero-thought-right.webp",
+          "selector": ".hero__asset--thought-right",
+          "crop": [
+            0.78,
+            0.55,
+            0.21,
+            0.26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "source": "02-services-layout-guide.webp",
+      "assets": [
+        {
+          "name": "services-tiger-thinking",
+          "output": "public/images/services/services-tiger-thinking.webp",
+          "selector": ".services__tiger",
+          "crop": [
+            0.36,
+            0.61,
+            0.2,
+            0.3
+          ]
+        },
+        {
+          "name": "services-thought-bubble",
+          "output": "public/images/services/services-thought-bubble.webp",
+          "selector": ".services__bubble",
+          "crop": [
+            0.58,
+            0.53,
+            0.22,
+            0.22
+          ]
+        },
+        {
+          "name": "paw-pencil-top",
+          "output": "public/images/services/paw-pencil-top.webp",
+          "selector": ".statement__paw--services",
+          "crop": [
+            0.47,
+            0.06,
+            0.08,
+            0.09
+          ]
+        }
+      ]
+    },
+    {
+      "id": "watching",
+      "source": "03-watching-layout-guide.webp",
+      "assets": [
+        {
+          "name": "watching-woman-stroller",
+          "output": "public/images/watching/watching-woman-stroller.webp",
+          "selector": ".watching__asset--stroller",
+          "crop": [
+            0.05,
+            0.13,
+            0.27,
+            0.3
+          ]
+        },
+        {
+          "name": "watching-man-coffee",
+          "output": "public/images/watching/watching-man-coffee.webp",
+          "selector": ".watching__asset--coffee",
+          "crop": [
+            0.68,
+            0.12,
+            0.27,
+            0.3
+          ]
+        },
+        {
+          "name": "watching-cafe-friends",
+          "output": "public/images/watching/watching-cafe-friends.webp",
+          "selector": ".watching__asset--cafe",
+          "crop": [
+            0.08,
+            0.62,
+            0.29,
+            0.31
+          ]
+        },
+        {
+          "name": "watching-man-couch",
+          "output": "public/images/watching/watching-man-couch.webp",
+          "selector": ".watching__asset--couch",
+          "crop": [
+            0.64,
+            0.61,
+            0.3,
+            0.32
+          ]
+        },
+        {
+          "name": "watching-paw-top",
+          "output": "public/images/watching/watching-paw-top.webp",
+          "selector": ".watching__asset--paw",
+          "crop": [
+            0.47,
+            0.06,
+            0.07,
+            0.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scrolling",
+      "source": "04-scrolling-layout-guide.webp",
+      "assets": [
+        {
+          "name": "scrolls-tiger",
+          "output": "public/images/scrolling/scrolls-tiger.webp",
+          "selector": ".scrolling__tiger",
+          "crop": [
+            0.13,
+            0.65,
+            0.21,
+            0.25
+          ]
+        },
+        {
+          "name": "scrolls-thought-bubble",
+          "output": "public/images/scrolling/scrolls-thought-bubble.webp",
+          "selector": ".scrolling__bubble",
+          "crop": [
+            0.31,
+            0.56,
+            0.21,
+            0.2
+          ]
+        },
+        {
+          "name": "paw-pencil-top-small",
+          "output": "public/images/scrolling/paw-pencil-top-small.webp",
+          "selector": ".statement__paw--small",
+          "crop": [
+            0.48,
+            0.07,
+            0.06,
+            0.08
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attention",
+      "source": "05-attention-red-carpet-layout-guide.webp",
+      "assets": [
+        {
+          "name": "attention-tiger-red-carpet",
+          "output": "public/images/attention/attention-tiger-red-carpet.webp",
+          "selector": ".attention__asset--tiger",
+          "crop": [
+            0.5,
+            0.23,
+            0.32,
+            0.7
+          ]
+        },
+        {
+          "name": "attention-camera-left-bottom",
+          "output": "public/images/attention/attention-camera-left-bottom.webp",
+          "selector": ".attention__asset--camera-left",
+          "crop": [
+            0.43,
+            0.64,
+            0.18,
+            0.23
+          ]
+        },
+        {
+          "name": "attention-camera-right-upper",
+          "output": "public/images/attention/attention-camera-right-upper.webp",
+          "selector": ".attention__asset--camera-upper",
+          "crop": [
+            0.83,
+            0.14,
+            0.16,
+            0.22
+          ]
+        },
+        {
+          "name": "attention-camera-right-lower",
+          "output": "public/images/attention/attention-camera-right-lower.webp",
+          "selector": ".attention__asset--camera-lower",
+          "crop": [
+            0.82,
+            0.57,
+            0.16,
+            0.22
+          ]
+        },
+        {
+          "name": "attention-microphone-left",
+          "output": "public/images/attention/attention-microphone-left.webp",
+          "selector": ".attention__asset--mic-left",
+          "crop": [
+            0.38,
+            0.32,
+            0.2,
+            0.18
+          ]
+        },
+        {
+          "name": "attention-microphone-right",
+          "output": "public/images/attention/attention-microphone-right.webp",
+          "selector": ".attention__asset--mic-right",
+          "crop": [
+            0.8,
+            0.42,
+            0.18,
+            0.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forms",
+      "source": "13-mid-form-paw-layout-guide.webp",
+      "assets": [
+        {
+          "name": "form-tiger-paw",
+          "output": "public/images/forms/form-tiger-paw.webp",
+          "selector": ".form-section__paw",
+          "crop": [
+            0.76,
+            0.7,
+            0.2,
+            0.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "price",
+      "source": "14-price-layout-guide.webp",
+      "assets": [
+        {
+          "name": "price-tiger-phone",
+          "output": "public/images/price/price-tiger-phone.webp",
+          "selector": ".price__tiger",
+          "crop": [
+            0.55,
+            0.35,
+            0.36,
+            0.55
+          ]
+        },
+        {
+          "name": "price-notification-brand-collab",
+          "output": "public/images/price/price-notification-brand-collab.webp",
+          "selector": ".price__note--one",
+          "crop": [
+            0.5,
+            0.08,
+            0.22,
+            0.1
+          ]
+        },
+        {
+          "name": "price-notification-available",
+          "output": "public/images/price/price-notification-available.webp",
+          "selector": ".price__note--two",
+          "crop": [
+            0.72,
+            0.1,
+            0.2,
+            0.1
+          ]
+        },
+        {
+          "name": "price-notification-cafe",
+          "output": "public/images/price/price-notification-cafe.webp",
+          "selector": ".price__note--three",
+          "crop": [
+            0.49,
+            0.28,
+            0.2,
+            0.1
+          ]
+        },
+        {
+          "name": "price-notification-new-inquiry",
+          "output": "public/images/price/price-notification-new-inquiry.webp",
+          "selector": ".price__note--four",
+          "crop": [
+            0.75,
+            0.29,
+            0.2,
+            0.1
+          ]
+        },
+        {
+          "name": "price-notification-work-together",
+          "output": "public/images/price/price-notification-work-together.webp",
+          "selector": ".price__note--five",
+          "crop": [
+            0.62,
+            0.2,
+            0.22,
+            0.1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "final-cta",
+      "source": "15-final-cta-layout-guide.webp",
+      "assets": [
+        {
+          "name": "final-form-tiger-paw",
+          "output": "public/images/forms/final-form-tiger-paw.webp",
+          "selector": ".form-section__paw--final",
+          "crop": [
+            0.76,
+            0.7,
+            0.2,
+            0.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knows",
+      "source": "07-knows-layout-guide.webp",
+      "assets": [
+        {
+          "name": "knows-icons",
+          "output": "public/images/statements/knows-icons.webp",
+          "selector": ".statement-panel__icon-art",
+          "crop": [
+            0.07,
+            0.08,
+            0.28,
+            0.08
+          ]
+        },
+        {
+          "name": "knows-what-to-do-tiger-chair",
+          "output": "public/images/statements/knows-what-to-do-tiger-chair.webp",
+          "selector": ".statement-panel__art--chair",
+          "crop": [
+            0.62,
+            0.23,
+            0.3,
+            0.56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reason-to-watch",
+      "source": "08-reason-to-watch-layout-guide.webp",
+      "assets": [
+        {
+          "name": "reason-to-watch-tiger-chair-close",
+          "output": "public/images/statements/reason-to-watch-tiger-chair-close.webp",
+          "selector": ".statement-panel__art--watch",
+          "crop": [
+            0.55,
+            0.2,
+            0.4,
+            0.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desire",
+      "source": "09-desire-layout-guide.webp",
+      "assets": [
+        {
+          "name": "desire-tiger-standing",
+          "output": "public/images/statements/desire-tiger-standing.webp",
+          "selector": ".statement-panel__art--desire",
+          "crop": [
+            0.55,
+            0.22,
+            0.28,
+            0.62
+          ]
+        },
+        {
+          "name": "desire-product-sketch-left",
+          "output": "public/images/statements/desire-product-sketch-left.webp",
+          "selector": ".statement-panel__sketch--product",
+          "crop": [
+            0.44,
+            0.58,
+            0.14,
+            0.2
+          ]
+        },
+        {
+          "name": "desire-building-sketch-right",
+          "output": "public/images/statements/desire-building-sketch-right.webp",
+          "selector": ".statement-panel__sketch--building",
+          "crop": [
+            0.78,
+            0.18,
+            0.17,
+            0.18
+          ]
+        },
+        {
+          "name": "desire-phone-sketch-right",
+          "output": "public/images/statements/desire-phone-sketch-right.webp",
+          "selector": ".statement-panel__sketch--phone",
+          "crop": [
+            0.78,
+            0.67,
+            0.15,
+            0.17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formats-intro",
+      "source": "10-formats-intro-layout-guide.webp",
+      "assets": [
+        {
+          "name": "formats-tiger-peeking-right",
+          "output": "public/images/formats/formats-tiger-peeking-right.webp",
+          "selector": ".formats__peek",
+          "crop": [
+            0.65,
+            0.55,
+            0.3,
+            0.36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offer-cards",
+      "source": "11-offer-cards-layout-guide.webp",
+      "assets": [
+        {
+          "name": "offer-card-tiger",
+          "output": "public/images/formats/offer-card-tiger.webp",
+          "selector": ".offer-card__art--tiger",
+          "crop": [
+            0.33,
+            0.7,
+            0.16,
+            0.22
+          ]
+        },
+        {
+          "name": "offer-card-director-chair",
+          "output": "public/images/formats/offer-card-director-chair.webp",
+          "selector": ".offer-card__art--chair",
+          "crop": [
+            0.79,
+            0.7,
+            0.16,
+            0.22
+          ]
+        }
+      ]
+    }
+  ]
+}

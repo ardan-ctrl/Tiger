@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper Tiger mockup extraction manifest",
+  "type": "object",
+  "required": ["sourceDir", "layoutGuideDir", "generatedCss", "sections"],
+  "properties": {
+    "sourceDir": { "type": "string" },
+    "layoutGuideDir": { "type": "string" },
+    "generatedCss": { "type": "string" },
+    "backgroundTolerance": { "type": "number" },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "assets"],
+        "properties": {
+          "id": { "type": "string" },
+          "source": { "type": "string" },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "output", "selector", "crop"],
+              "properties": {
+                "name": { "type": "string" },
+                "output": { "type": "string" },
+                "selector": { "type": "string" },
+                "crop": {
+                  "type": "array",
+                  "description": "Normalized [x, y, width, height] crop against the source mockup.",
+                  "prefixItems": [
+                    { "type": "number", "minimum": 0, "maximum": 1 },
+                    { "type": "number", "minimum": 0, "maximum": 1 },
+                    { "type": "number", "minimum": 0, "maximum": 1 },
+                    { "type": "number", "minimum": 0, "maximum": 1 }
+                  ],
+                  "minItems": 4,
+                  "maxItems": 4
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
