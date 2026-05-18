@@ -423,20 +423,22 @@ docs/ASSET_MAP.md
 
 ---
 
-## 9. Typography system — final selection
+## 9. Typography system — fixed from the provided Woset style reference
 
-Typography is one of the main conversion and art-direction tools of the landing page. It must carry the same energy as the approved mockups: oversized, direct, editorial, warm, and unmistakably intentional.
+Typography is **already defined** by the supplied Woset style reference. Do not invent a new font system and do not introduce an unrelated serif accent.
 
-The font choice is **fixed now**.
+### 9.1 Final production font for the live coded site: `Inter`
 
-### 9.1 Final font pair
+The style reference identifies **Macan** as the primary visual reference typeface and explicitly gives **Inter** as its substitute. For this Paper Tiger landing page, the concrete implementation font is therefore:
 
-#### Primary sans-serif: `Inter`
+```txt
+Inter
+```
 
-Use **Inter** for all main live HTML typography:
+Use **Inter** for all live HTML typography:
 
 - hero title `Paper Tiger`;
-- all major section headlines except the serif accent statement;
+- all major section headlines;
 - supporting subheads;
 - offer card headings;
 - body copy;
@@ -444,88 +446,83 @@ Use **Inter** for all main live HTML typography:
 - form labels, field text, buttons, and utility copy;
 - footer utility text.
 
-Why this choice:
+This is not a placeholder. It is the fixed implementation choice for the site build.
 
-- it is strong, clean, highly legible, and scalable from small UI labels to oversized display headlines;
-- it can achieve the bold black grotesk character seen in the approved mockups through correct weight, scale, and tracking;
-- it pairs naturally with hand-drawn illustration without becoming too whimsical or too corporate;
-- it is practical for a fast, responsive web build.
+### 9.2 Reference font mapping from the style system
 
-#### Serif accent: `Cormorant Garamond`
+The uploaded style reference contains the following typography analysis:
 
-Use **Cormorant Garamond** only for the single editorial statement:
+- **Macan** — primary reference family for headings, body text, and interactive elements; substitute: **Inter**.
+- **A1 Gothic M** — detected as a specific secondary body/display-related variation; not a general-purpose page font.
+- **GTStandard-M** — detected in the source analysis, but not defined as a core active system for this project.
 
-```txt
-So they want
-what you sell.
-```
+Implementation rule for Paper Tiger:
 
-This serif line is a deliberate tonal shift. It adds a more desirable, editorial, slightly fashion-like temperature to that one section.
+- Use **Inter only** as the coded web font family.
+- Do **not** add A1 Gothic M, GTStandard-M, or any unrelated font unless explicitly directed later.
+- Preserve the proportions, weights, spacing, and hierarchy given by the style reference rather than inventing a new typography stack.
 
-Do **not** spread Cormorant Garamond across random headlines, cards, forms, or CTA sections. Its power comes from appearing once.
+### 9.3 Type scale taken from the supplied system
 
-### 9.2 Typography usage map
-
-#### Inter — display headlines
-
-Use for:
-
-- `Paper Tiger` hero title;
-- `Sponsored episodes, brand integrations and custom animated ads.`;
-- `Ads people actually watch`;
-- `Your audience scrolls before most ads even begin.`;
-- `This attention could belong to your brand`;
-- `Paper Tiger knows what to do.`;
-- `I give people a reason to watch.`;
-- `Choose what you want Paper Tiger to do.`;
-- `Not sure which one fits?`;
-- `The reach is already big. The price is not.`;
-- `Drop your link.`;
-- `Get Paper Tiger working for your brand`.
-
-Recommended starting characteristics:
-
-- weight: `800` or `900` depending on the section scale;
-- line-height: tight and deliberate;
-- letter-spacing: slightly negative for large headlines where needed;
-- casing: sentence case, not all-caps.
-
-#### Inter — body and UI text
-
-Use for:
-
-- offer card body copy;
-- price support copy;
-- supporting explanatory lines;
-- form labels and field text;
-- header and footer utility text.
-
-Recommended starting characteristics:
-
-- body weight: `400`;
-- emphasis / labels: `500` or `600`;
-- body line-height: comfortable enough for card readability;
-- avoid making small copy feel cramped.
-
-#### Cormorant Garamond — one serif feature statement
-
-Use for:
+Use the following typography tokens as the reference baseline:
 
 ```txt
-So they want
-what you sell.
+body-lg:    16px / line-height 1 / letter-spacing -0.3px
+subheading: 24px / line-height 1.2 / letter-spacing 1px
+display:    95px / line-height 1 / letter-spacing -0.6px
 ```
 
-Recommended starting characteristics:
+These are the source values from the provided style system. Responsive implementation may scale them fluidly, but the visual ratios and typographic attitude must remain consistent.
 
-- weight: `500` or `600`;
-- large display scale;
-- line-height: elegant and compact;
-- tracking: natural or only subtly adjusted.
+### 9.4 Font weights taken from the supplied system
 
-### 9.3 Handwritten and pencil lettering
+Use the following as the baseline:
 
-Handwritten details are part of the illustration system, not the core type system.
+```txt
+Inter 400 — body and standard utility text
+Inter 500 — larger headlines, UI emphasis, stronger labels
+```
+
+Do not automatically jump to extremely heavy `800` / `900` weights unless the actual mockup comparison clearly proves that is needed. The source system points toward a friendlier, more controlled typographic weight structure rather than brute-force ultra-boldness.
+
+### 9.5 Application by role
+
+#### Display text
+
+Use Inter as the live implementation font for large hero and headline typography, with the supplied display reference:
+
+```txt
+95px / line-height 1 / letter-spacing -0.6px
+```
+
+Final responsive sizes may be adjusted section by section, but the site should preserve:
+
+- strong scale;
+- compact line height;
+- clean editorial geometry;
+- Woset-like headline confidence.
+
+#### Subheadings
+
+Use Inter with the supplied subheading reference:
+
+```txt
+24px / line-height 1.2 / letter-spacing 1px
+```
+
+#### Body / form / utility text
+
+Use Inter with the supplied body reference:
+
+```txt
+16px / line-height 1 / letter-spacing -0.3px
+```
+
+Where body copy needs longer reading comfort inside cards or explanatory paragraphs, line-height may be increased carefully during implementation, but the visual compactness of the system should not be lost.
+
+### 9.6 Handwritten and pencil lettering
+
+Handwritten details are part of the illustration system, not the coded font system.
 
 This includes:
 
@@ -540,35 +537,19 @@ Preferred rule:
 
 The handwritten layer should stay imperfect, lightly naive, and human — not typographically “cute.”
 
-### 9.4 Typographic hierarchy
-
-The intended hierarchy is:
-
-1. **Hero display text** — biggest and most dominant.
-2. **Major section statements** — giant conversational commercial claims.
-3. **One serif editorial statement** — rare tonal shift, only where specified.
-4. **Offer-card headings** — strong, very clear, still characterful.
-5. **Supporting copy** — compact and readable.
-6. **Form labels / navigation / metadata** — understated and precise.
-
-Avoid using too many sizes. The system should feel intentional, not improvised.
-
-### 9.5 Font implementation rules
+### 9.7 Typography implementation rules
 
 When the site is implemented in Next.js:
 
-- load `Inter` and `Cormorant_Garamond` through `next/font/google`;
-- let Next.js self-host and optimize the font files through the build;
-- use only these **two HTML font families** on the live page;
-- handwritten styles remain image assets unless we explicitly decide otherwise.
+- load **Inter** through `next/font/google`;
+- use **Inter** as the single live HTML font family for the project;
+- do not import or introduce additional live web fonts without explicit approval;
+- implement typography through CSS custom properties or centralized style tokens that mirror the supplied system values;
+- preserve the supplied spacing and scale logic as the source of truth.
 
-### 9.6 Licensing and production rule
+### 9.8 Removed from scope
 
-The chosen font pair is acceptable for this project because both are open-source web font families suitable for commercial use.
-
-Do not substitute them during implementation unless explicitly directed.
-
-Do not pull random commercial reference fonts from the web or approximate them with additional third-party typefaces.
+The previously introduced `Cormorant Garamond` idea is removed. It was not part of the provided style system and should not be used for this project.
 
 ---
 
@@ -619,10 +600,10 @@ These points are intentionally not finalized yet:
 - final SEO metadata and social sharing assets;
 - final copy polish in selected paragraphs and offer cards if adjusted during implementation.
 
-The font system is **not** TBD anymore. It is fixed as:
+The font system is **not** TBD. It is fixed as:
 
 ```txt
-Inter + Cormorant Garamond
+Inter, following the supplied Macan-based Woset typography system.
 ```
 
 ---
