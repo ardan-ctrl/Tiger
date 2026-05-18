@@ -31,13 +31,13 @@ The site must:
 
 When implementation choices need to be made, follow this order:
 
-1. **Approved Paper Tiger mockups and layout guides** — primary authority for composition, proportions, visual rhythm, and overall feeling.
-2. **This README** — project-level creative, structural, technical, and typographic rules.
+1. **Approved Paper Tiger mockups and layout guides** — primary authority for composition, proportions, visual rhythm, typography weight, color temperature, and overall feeling.
+2. **This README** — project-level creative, structural, technical, typographic, and color rules.
 3. **`docs/ASSET_MAP.md`** — asset strategy: which section needs what type of artwork package.
 4. **`docs/EXPORT_CHECKLIST.md`** — exact export plan, filenames, and folder placement.
-5. **Uploaded Woset style reference** — foundational reference for the typographic and UI system, adapted to the Paper Tiger mockups rather than followed mechanically.
+5. **Uploaded Woset style reference** — foundational reference for the type/UI/color logic, adapted to the Paper Tiger mockups rather than followed mechanically.
 
-The implementation should stay faithful to the **Paper Tiger mockups first**. The Woset system is a design reference and structural aid, not a reason to flatten or weaken the approved Paper Tiger compositions.
+The implementation should stay faithful to the **Paper Tiger mockups first**. The Woset system is a design reference and structural aid, not a reason to flatten, cool down, or weaken the approved Paper Tiger compositions.
 
 ---
 
@@ -62,7 +62,7 @@ The landing page should feel:
 - bold;
 - mischievous;
 - commercially sharp;
-- hand-drawn / paper-world adjacent;
+- warm, paper-like, and illustration-led;
 - premium in composition, not overdesigned;
 - humorous without becoming childish;
 - persuasive without sounding corporate.
@@ -94,6 +94,7 @@ These rules should guide all coding, layout, motion, and styling decisions.
 - Do not replace prepared Paper Tiger artwork with placeholders or unrelated stock-style graphics.
 - Do not bake all page text into raster images.
 - Do not overanimate the site with childish bounce, gimmicky parallax, or distracting effects.
+- Do not force a cold grey background simply because the Woset style reference contains a cooler canvas token; Paper Tiger must visually match its warmer approved mockups.
 
 ---
 
@@ -558,7 +559,94 @@ When the site is implemented in Next.js:
 
 ---
 
-## 11. Motion direction
+## 11. Color system
+
+The color system is informed by the supplied Woset style reference, but the **approved Paper Tiger mockups are the visual authority**, especially for the warmth of the page background.
+
+### 11.1 Global color approach
+
+Paper Tiger is a **warm paper-world site**, not a cold neutral interface.
+
+The live build should preserve:
+
+- soft warm paper background;
+- near-black text with very high contrast;
+- black form/button accents;
+- minimal, disciplined secondary neutrals;
+- rare small color accents only where they already belong to the visual system.
+
+### 11.2 Core production colors
+
+Use these supplied reference colors as the baseline system:
+
+```txt
+Ink Black      #000000 — primary text, major headings, key borders, black buttons
+Muted Ash      #bbbab7 — subtle dividers, quiet borders where black is too strong
+Graphite       #8d8c8a — secondary text only when a softer hierarchy is needed
+Crayon Yellow  #ecca53 — rare active-state or small UI accent only when supported by the approved mockups
+```
+
+### 11.3 Background rule
+
+The page background should follow the **approved warm paper mockups** and the production asset:
+
+```txt
+public/images/background/paper-texture.webp
+```
+
+Do **not** default the entire page to the cooler Woset `Canvas #e5e7eb` if that makes the Paper Tiger site feel greyer or colder than the mockups.
+
+Implementation rule:
+
+- the paper texture asset is the primary background source;
+- the CSS background fallback should be selected to visually match that warm paper background during implementation;
+- any flat fallback must support the approved mockup temperature, not override it.
+
+### 11.4 UI colors and forms
+
+Forms and interface elements should follow the current mockup logic:
+
+- text: `Ink Black #000000`;
+- input borders: usually `Ink Black #000000`, or `Muted Ash #bbbab7` only if the mockup calls for a softer edge;
+- primary submit button: black fill with light text, matching the approved form compositions;
+- avoid colorful button systems unless a specific approved screen requires it.
+
+### 11.5 Accent color usage
+
+`Crayon Yellow #ecca53` may be used only as a **controlled accent**, for example:
+
+- a tiny selected-state chip;
+- a highlighted micro-accent;
+- a limited active-state marker.
+
+It should **not** become a dominant CTA color on this Paper Tiger landing page unless a specific approved composition explicitly uses it.
+
+### 11.6 Colors intentionally not active in the current landing page
+
+The Woset reference also includes:
+
+```txt
+Deep Violet   #2d5193
+Forest Green  #054331
+Artisan Red   #a5001b
+```
+
+These are **not part of the current Paper Tiger landing page system** unless a future approved section explicitly introduces them.
+
+Do not add colored full-bleed panels, decorative fills, or random accent blocks from these colors just because they exist in the style reference.
+
+### 11.7 Color implementation rules
+
+When the site is implemented:
+
+- define color tokens centrally in CSS variables or the chosen theme layer;
+- use semantic roles rather than scattering raw hex values across components;
+- let the Paper Tiger mockups determine final warmth, contrast, and restraint;
+- do not let the raw Woset palette mechanically override the actual approved landing page art direction.
+
+---
+
+## 12. Motion direction
 
 Motion is important, but it should serve the Paper Tiger world rather than dominate it.
 
@@ -579,7 +667,7 @@ Motion is important, but it should serve the Paper Tiger world rather than domin
 
 ---
 
-## 12. Performance and responsive requirements
+## 13. Performance and responsive requirements
 
 The final website must:
 
@@ -594,7 +682,7 @@ Desktop composition should be perfected first. Mobile should then be adapted int
 
 ---
 
-## 13. Current open decisions / TBD
+## 14. Current open decisions / TBD
 
 These points are intentionally not finalized yet:
 
@@ -604,15 +692,22 @@ These points are intentionally not finalized yet:
 - final SEO metadata and social sharing assets;
 - final copy polish in selected paragraphs and offer cards if adjusted during implementation.
 
-The typography system itself is **not** TBD:
+The typography system is **not** TBD:
 
 ```txt
 Inter, guided by the supplied Macan-based Woset reference and tuned to the approved Paper Tiger mockups.
 ```
 
+The active color system is **not** TBD:
+
+```txt
+Warm paper background from the approved mockups and paper texture asset,
+with Ink Black / Muted Ash / Graphite / highly restrained Crayon Yellow as the practical UI palette.
+```
+
 ---
 
-## 14. Immediate next step
+## 15. Immediate next step
 
 Use:
 
