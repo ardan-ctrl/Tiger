@@ -2,7 +2,9 @@
 
 This document defines the **active visual system** for the Paper Tiger landing page.
 
-It is based on the supplied **Woset style reference**, but the **approved Paper Tiger mockups and layout guides are the visual authority**. When there is tension between a raw Woset token and the approved Paper Tiger screens, follow the Paper Tiger screens.
+It is the project’s own implementation system. It contains only the rules that are relevant to **Paper Tiger** and should be used directly during coding.
+
+The **approved Paper Tiger mockups and layout guides are the visual authority**. When a token or guideline needs interpretation, match the approved screens.
 
 ---
 
@@ -10,7 +12,7 @@ It is based on the supplied **Woset style reference**, but the **approved Paper 
 
 ### 1.1 Live implementation font
 
-The Woset reference identifies **Macan** as the visual reference family and **Inter** as its substitute. For the live coded Paper Tiger site, the font is fixed as:
+The live coded site uses:
 
 ```txt
 Inter
@@ -31,7 +33,7 @@ Do not introduce unrelated live web fonts unless explicitly directed.
 
 ### 1.2 Mockup-led weight policy
 
-The approved Paper Tiger mockups are visually heavier than the original Woset typography baseline.
+The approved Paper Tiger mockups are visually strong and headline-led.
 
 Use:
 
@@ -43,7 +45,7 @@ Inter 400 — body copy and lighter utility text where appropriate.
 
 This is a **designer-led judgment rule**, not a rigid weight matrix. Tune section by section against the approved mockups.
 
-### 1.3 Type scale anchors from the reference system
+### 1.3 Type scale anchors
 
 Use these as structural anchors, not inflexible production values:
 
@@ -80,7 +82,7 @@ Do not replace these with a generic handwriting web font unless explicitly instr
 
 Paper Tiger is a **warm paper-world site**, not a cool grey UI canvas.
 
-The Woset palette is useful, but the approved Paper Tiger mockups determine the final warmth, restraint, and hierarchy.
+The approved Paper Tiger mockups determine the final warmth, restraint, and hierarchy.
 
 ### 2.2 Active production palette
 
@@ -101,7 +103,7 @@ public/images/background/paper-texture.webp
 
 The CSS fallback background should be chosen to visually match the **warm paper tone** of the approved Paper Tiger mockups.
 
-Do **not** default the whole page to Woset `Canvas #e5e7eb` if that makes the site colder or greyer than the approved screens.
+Do **not** default the whole page to a cooler grey canvas if that makes the site colder or greyer than the approved screens.
 
 ### 2.4 UI color behaviour
 
@@ -124,15 +126,13 @@ It should not become a dominant CTA color by default.
 
 ### 2.6 Colors not active in this landing page
 
-The Woset reference also includes:
+These colors are **not active** for the current Paper Tiger landing page unless a future approved section explicitly introduces them:
 
 ```txt
 Deep Violet   #2d5193
 Forest Green  #054331
 Artisan Red   #a5001b
 ```
-
-These are **not active colors** for the current Paper Tiger landing page unless a future approved section explicitly introduces them.
 
 ---
 
@@ -146,7 +146,7 @@ The site should feel:
 comfortable, spacious, composed
 ```
 
-Use the Woset comfortable-density logic as support, while preserving the exact visual rhythm of the approved Paper Tiger mockups.
+Use the spacing system to preserve a controlled page rhythm while matching the exact visual logic of the approved Paper Tiger mockups.
 
 ### 3.2 Spacing token pool
 
@@ -181,9 +181,8 @@ Use simple borders rather than decorative interface noise:
 
 ### 4.2 Radius policy
 
-Woset uses generous roundness as a softness principle. For Paper Tiger:
+Paper Tiger uses soft, approachable UI geometry.
 
-- preserve soft, approachable geometry;
 - use a shared radius system rather than random one-off corners;
 - treat `30px` as a useful reference radius for pill-like UI where it matches the approved mockup;
 - do **not** blindly force every input, card, or button to `30px` if the Paper Tiger screen uses a different proportion.
@@ -216,7 +215,7 @@ Guidance:
 
 ### 5.2 Offer cards
 
-Apply the Woset principle of simple, readable surfaces to the Paper Tiger offer cards:
+Apply a simple, readable surface system to the Paper Tiger offer cards:
 
 - calm paper-like panels;
 - strong hierarchy;
