@@ -423,7 +423,136 @@ docs/ASSET_MAP.md
 
 ---
 
-## 9. Motion direction
+## 9. Typography direction
+
+Typography is one of the main conversion and art-direction tools of the landing page. It must carry the same energy as the approved mockups: oversized, direct, editorial, warm, and unmistakably intentional.
+
+### 9.1 Primary font system
+
+The site should use **one dominant sans-serif family** for nearly all live HTML text:
+
+- hero title;
+- major section headlines;
+- card headings;
+- navigation;
+- form labels and form copy;
+- body text;
+- footer utility text.
+
+The primary sans-serif should feel:
+
+- bold and highly legible;
+- contemporary rather than techy;
+- clean but not cold;
+- friendly enough to live beside hand-drawn illustration;
+- strong enough to hold very large display sizes.
+
+The approved mockups should remain the **visual reference for weight, spacing, and overall typographic mood**.
+
+### 9.2 Temporary implementation font if the final font is not locked yet
+
+Until the final approved web font is selected or supplied, use a high-quality open implementation fallback that stays visually close to the mockup mood.
+
+Recommended temporary direction:
+
+- **Inter / Inter Tight-style grotesk logic** for the live coded prototype;
+- heavy / bold styles for display text;
+- regular / medium styles for body, utility, navigation, and forms.
+
+This is a **temporary implementation choice**, not a permanent brand decision. Final substitution must preserve the approved visual character of the layouts.
+
+### 9.3 Display headline behaviour
+
+Large headlines should remain:
+
+- materially oversized;
+- black or near-black;
+- tightly set;
+- compact in line-height;
+- visually stable across screen sizes.
+
+Use responsive type sizing rather than fixed desktop-only sizes, but do not shrink headlines until they lose impact.
+
+Expected behaviour:
+
+- desktop: heroic oversized statements with strong authority;
+- tablet: still dominant and editorial;
+- mobile: large and dramatic, but carefully rewrapped instead of mechanically compressed.
+
+### 9.4 Serif accent rule
+
+A **single editorial serif accent** is allowed only where it matches the approved design language — most notably the statement:
+
+```txt
+So they want
+what you sell.
+```
+
+This serif usage should:
+
+- feel elegant, desirable, and slightly more fashion/editorial;
+- appear as a deliberate tonal shift;
+- remain rare.
+
+Do **not** spread serif typography across random headings or card content. The power of this contrast comes from scarcity.
+
+### 9.5 Handwritten and pencil lettering
+
+Handwritten details are part of the illustration system, not the core type system.
+
+This includes:
+
+- speech / thought bubbles;
+- small pencil-style reactions;
+- decorative handwritten connectors such as the sketched `and`, if retained.
+
+Preferred rule:
+
+- keep these as artwork assets when they are part of the approved illustration composition;
+- do not replace them with a generic handwriting web font unless explicitly requested.
+
+The handwritten layer should stay imperfect, lightly naive, and human — not typographically “cute.”
+
+### 9.6 Typographic hierarchy
+
+The intended hierarchy is:
+
+1. **Hero display text** — biggest and most dominant.
+2. **Major section statements** — giant conversational commercial claims.
+3. **Offer-card headings** — strong, very clear, still characterful.
+4. **Supporting copy** — compact and readable.
+5. **Form labels / navigation / metadata** — understated and precise.
+
+Avoid using too many sizes. The system should feel intentional, not improvised.
+
+### 9.7 Font implementation rules
+
+When the site is implemented in Next.js:
+
+- use the built-in `next/font` system for production font loading;
+- prefer variable fonts when available and appropriate;
+- self-host the selected font through the project build rather than relying on external browser requests;
+- if a custom licensed font is selected, load it locally using the project font setup;
+- keep the live coded font system to **no more than two HTML font families**:
+  1. primary sans-serif;
+  2. optional serif accent.
+
+Handwritten styles remain image assets unless we explicitly decide otherwise.
+
+### 9.8 Licensing rule
+
+Do **not** use any commercial or reference-site font in the live project unless its web use is legally cleared.
+
+Reference fonts may guide the mood, but implementation must use either:
+
+- an explicitly approved licensed brand font; or
+- a suitable open alternative during prototyping and, if approved, in production.
+
+Font licensing must be treated as part of production hygiene, not an afterthought.
+
+---
+
+## 10. Motion direction
 
 Motion is important, but it should serve the Paper Tiger world rather than dominate it.
 
@@ -444,7 +573,7 @@ Motion is important, but it should serve the Paper Tiger world rather than domin
 
 ---
 
-## 10. Performance and responsive requirements
+## 11. Performance and responsive requirements
 
 The final website must:
 
@@ -459,12 +588,12 @@ Desktop composition should be perfected first. Mobile should then be adapted int
 
 ---
 
-## 11. Current open decisions / TBD
+## 12. Current open decisions / TBD
 
 These points are intentionally not finalized yet:
 
 - exact production tech stack setup details;
-- final font pairing;
+- final licensed / approved font selection;
 - final form submission method;
 - exact final image filenames within each asset directory where multiple export paths are still possible;
 - whether any section gets a subtle video loop rather than static imagery + code motion;
@@ -473,7 +602,7 @@ These points are intentionally not finalized yet:
 
 ---
 
-## 12. Immediate next step
+## 13. Immediate next step
 
 Use the detailed asset specification in:
 
