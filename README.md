@@ -19,7 +19,7 @@ It is an **art-directed conversion landing page** for a distinctive entertainmen
 The site must:
 
 - feel unmistakably like **Paper Tiger**;
-- preserve the personality, humour, confidence, and visual charm of the approved slide mockups;
+- preserve the personality, humour, confidence, and visual charm of the approved mockups;
 - communicate the offer fast and clearly to brands;
 - make leaving an enquiry feel like the obvious next move;
 - work beautifully on desktop, tablet, and mobile;
@@ -27,11 +27,25 @@ The site must:
 
 ---
 
-## 2. Core visual direction
+## 2. Source-of-truth hierarchy
+
+When implementation choices need to be made, follow this order:
+
+1. **Approved Paper Tiger mockups and layout guides** — primary authority for composition, proportions, visual rhythm, and overall feeling.
+2. **This README** — project-level creative, structural, technical, and typographic rules.
+3. **`docs/ASSET_MAP.md`** — asset strategy: which section needs what type of artwork package.
+4. **`docs/EXPORT_CHECKLIST.md`** — exact export plan, filenames, and folder placement.
+5. **Uploaded Woset style reference** — foundational reference for the typographic and UI system, adapted to the Paper Tiger mockups rather than followed mechanically.
+
+The implementation should stay faithful to the **Paper Tiger mockups first**. The Woset system is a design reference and structural aid, not a reason to flatten or weaken the approved Paper Tiger compositions.
+
+---
+
+## 3. Core visual direction
 
 ### Main reference
 
-The key visual reference is **Woset.world**, especially:
+The key external reference is **Woset.world**, especially:
 
 - its light, paper-like visual field;
 - oversized typography;
@@ -55,18 +69,19 @@ The landing page should feel:
 
 ---
 
-## 3. Non-negotiable design rules
+## 4. Non-negotiable design rules
 
 These rules should guide all coding, layout, motion, and styling decisions.
 
 ### Do
 
-- Use the approved slide mockups as the **primary composition reference**.
+- Use the approved Paper Tiger mockups as the **primary visual reference**.
 - Build a custom, highly visual single-page landing page.
 - Keep typography large, expressive, and immediately legible.
 - Preserve generous negative space.
-- Use prepared artwork from `public/images/...` as a source of truth.
-- Keep copy as real HTML text wherever possible.
+- Use prepared artwork from `public/images/...` as the production visual source.
+- Use flattened layout guides from `design/layout-guides/` only as composition references, not as page screenshots pasted into the website.
+- Keep core site copy as real HTML text wherever possible.
 - Use forms as real interactive UI, not baked into flat mockup images.
 - Design desktop first, then adapt thoughtfully for tablet and mobile.
 - Add motion that feels editorial, refined, and intentional.
@@ -74,7 +89,7 @@ These rules should guide all coding, layout, motion, and styling decisions.
 ### Do not
 
 - Do not turn the site into a generic startup layout.
-- Do not introduce testimonial strips, logo clouds, pricing tables, FAQ blocks, feature grids, or any other standard marketing filler unless explicitly requested later.
+- Do not introduce testimonial strips, logo clouds, pricing tables, FAQ blocks, feature grids, or other standard marketing filler unless explicitly requested later.
 - Do not redesign approved compositions into cleaner but blander layouts.
 - Do not replace prepared Paper Tiger artwork with placeholders or unrelated stock-style graphics.
 - Do not bake all page text into raster images.
@@ -82,7 +97,7 @@ These rules should guide all coding, layout, motion, and styling decisions.
 
 ---
 
-## 4. Planned technology direction
+## 5. Planned technology direction
 
 The project is intended to be built as a custom modern landing page.
 
@@ -92,7 +107,7 @@ The project is intended to be built as a custom modern landing page.
 - **TypeScript**
 - component-based architecture
 - static image assets under `public/images/`
-- future deployment via a modern static / serverless hosting flow
+- responsive custom layout, not a template system
 
 ### Forms and lead capture
 
@@ -117,7 +132,7 @@ The environment template is prepared in:
 
 ---
 
-## 5. Approved landing-page narrative structure
+## 6. Approved landing-page narrative structure
 
 The homepage is a single scrolling story with a clear conversion arc.
 
@@ -274,7 +289,7 @@ The footer typography is one of the key motion moments of the site.
 
 ---
 
-## 6. Project structure
+## 7. Project structure
 
 The repository is intentionally organized before implementation begins.
 
@@ -297,7 +312,8 @@ Tiger/
 │   └── layout-guides/
 │
 ├── docs/
-│   └── ASSET_MAP.md
+│   ├── ASSET_MAP.md
+│   └── EXPORT_CHECKLIST.md
 │
 ├── lib/
 │
@@ -324,7 +340,7 @@ Tiger/
 
 ---
 
-## 7. Planned folder responsibilities
+## 8. Folder responsibilities
 
 ### `app/`
 
@@ -358,14 +374,22 @@ They are **not** production webpage assets by default.
 
 ### `docs/ASSET_MAP.md`
 
-Detailed production asset specification for the site, including:
+Explains the overall artwork strategy:
 
-- which images to export;
-- which sections need a flattened layout guide;
-- which elements should also be exported separately;
-- how assets should be named;
-- which files belong in which folders;
-- where adaptive layout flexibility matters most.
+- which sections need flattened guides;
+- which sections need separate responsive assets;
+- when a locked composition is acceptable;
+- how to think about artwork packaging.
+
+### `docs/EXPORT_CHECKLIST.md`
+
+The operational export document:
+
+- exact files to prepare;
+- filenames;
+- folder placement;
+- section-by-section export instructions;
+- optional versus required asset splits.
 
 ### `lib/`
 
@@ -381,7 +405,7 @@ All production art assets used by the landing page, grouped by section.
 
 ---
 
-## 8. Image asset policy
+## 9. Image asset policy
 
 All landing-page artwork should be prepared and uploaded into the already created asset folders.
 
@@ -415,25 +439,28 @@ public/images/price/
 public/images/decor/
 ```
 
-The full section-by-section asset specification lives in:
+Detailed asset guidance lives in:
 
 ```txt
 docs/ASSET_MAP.md
+docs/EXPORT_CHECKLIST.md
 ```
 
 ---
 
-## 9. Typography system — fixed from the provided Woset style reference
+## 10. Typography system
 
-Typography is **already defined** by the supplied Woset style reference. Do not invent a new font system and do not introduce an unrelated serif accent.
+Typography is based on the supplied Woset style reference, but the **approved Paper Tiger mockups are the visual authority**.
 
-### 9.1 Final production font for the live coded site: `Inter`
-
-The style reference identifies **Macan** as the primary visual reference typeface and explicitly gives **Inter** as its substitute. For this Paper Tiger landing page, the concrete implementation font is therefore:
+The style reference identifies **Macan** as the key reference family and gives **Inter** as the substitute. For the live coded Paper Tiger site, the implementation font is fixed as:
 
 ```txt
 Inter
 ```
+
+Do not introduce unrelated live web fonts unless explicitly directed later.
+
+### 10.1 Core implementation rule
 
 Use **Inter** for all live HTML typography:
 
@@ -446,25 +473,25 @@ Use **Inter** for all live HTML typography:
 - form labels, field text, buttons, and utility copy;
 - footer utility text.
 
-This is not a placeholder. It is the fixed implementation choice for the site build.
+Handwritten/pencil lettering remains part of the artwork system, not a coded handwriting font.
 
-### 9.2 Reference font mapping from the style system
+### 10.2 Mockup-led weight policy
 
-The uploaded style reference contains the following typography analysis:
+The approved mockups read **heavier and more emphatic** than the base Woset text system. Implementation should follow the mockups rather than forcing a lighter Woset-style result.
 
-- **Macan** — primary reference family for headings, body text, and interactive elements; substitute: **Inter**.
-- **A1 Gothic M** — detected as a specific secondary body/display-related variation; not a general-purpose page font.
-- **GTStandard-M** — detected in the source analysis, but not defined as a core active system for this project.
+Use this as the practical rule:
 
-Implementation rule for Paper Tiger:
+```txt
+Inter 800 — default starting point for major Paper Tiger headlines and bold hero statements, whenever that best matches the mockups.
+Inter 500 — use where 800 becomes visually excessive, too dense, or less faithful to the specific approved composition.
+Inter 400 — body copy and lighter utility text where appropriate.
+```
 
-- Use **Inter only** as the coded web font family.
-- Do **not** add A1 Gothic M, GTStandard-M, or any unrelated font unless explicitly directed later.
-- Preserve the proportions, weights, spacing, and hierarchy given by the style reference rather than inventing a new typography stack.
+This is intentionally a **designer-led decision**, not a rigid numeric rule. The coded page should be tuned against the actual mockups section by section.
 
-### 9.3 Type scale taken from the supplied system
+### 10.3 Type scale reference
 
-Use the following typography tokens as the reference baseline:
+The supplied style reference provides these baseline anchors:
 
 ```txt
 body-lg:    16px / line-height 1 / letter-spacing -0.3px
@@ -472,57 +499,39 @@ subheading: 24px / line-height 1.2 / letter-spacing 1px
 display:    95px / line-height 1 / letter-spacing -0.6px
 ```
 
-These are the source values from the provided style system. Responsive implementation may scale them fluidly, but the visual ratios and typographic attitude must remain consistent.
+Use these as structural reference points, not as an inflexible template. The final type scale should respect:
 
-### 9.4 Font weights taken from the supplied system
+- the approved Paper Tiger layouts;
+- the stronger headline presence visible in the mockups;
+- readability on mobile and tablet;
+- the need for the page to feel composed, not mechanically tokenized.
 
-Use the following as the baseline:
+### 10.4 Application by role
 
-```txt
-Inter 400 — body and standard utility text
-Inter 500 — larger headlines, UI emphasis, stronger labels
-```
+#### Display and hero text
 
-Do not automatically jump to extremely heavy `800` / `900` weights unless the actual mockup comparison clearly proves that is needed. The source system points toward a friendlier, more controlled typographic weight structure rather than brute-force ultra-boldness.
+- Use Inter.
+- Start from the stronger display feeling seen in the mockups.
+- `800` weight is usually the right first pass.
+- Reduce to `500` only where the approved screen clearly needs more softness or air.
+- Maintain compact line-height and tight visual rhythm.
 
-### 9.5 Application by role
+#### Supporting subheads
 
-#### Display text
+- Use Inter.
+- Weight can move between `500` and `800` depending on mockup fidelity.
+- Keep proportions and spacing visually aligned with the reference layouts.
 
-Use Inter as the live implementation font for large hero and headline typography, with the supplied display reference:
+#### Body, forms, card text, and utility copy
 
-```txt
-95px / line-height 1 / letter-spacing -0.6px
-```
+- Use Inter.
+- Prefer `400` for body text.
+- Use `500` for labels, small emphasis, and UI hierarchy.
+- Increase line-height where longer reading requires it, especially inside offer cards.
 
-Final responsive sizes may be adjusted section by section, but the site should preserve:
+### 10.5 Handwritten and pencil lettering
 
-- strong scale;
-- compact line height;
-- clean editorial geometry;
-- Woset-like headline confidence.
-
-#### Subheadings
-
-Use Inter with the supplied subheading reference:
-
-```txt
-24px / line-height 1.2 / letter-spacing 1px
-```
-
-#### Body / form / utility text
-
-Use Inter with the supplied body reference:
-
-```txt
-16px / line-height 1 / letter-spacing -0.3px
-```
-
-Where body copy needs longer reading comfort inside cards or explanatory paragraphs, line-height may be increased carefully during implementation, but the visual compactness of the system should not be lost.
-
-### 9.6 Handwritten and pencil lettering
-
-Handwritten details are part of the illustration system, not the coded font system.
+Handwritten details are part of the illustration system.
 
 This includes:
 
@@ -537,23 +546,19 @@ Preferred rule:
 
 The handwritten layer should stay imperfect, lightly naive, and human — not typographically “cute.”
 
-### 9.7 Typography implementation rules
+### 10.6 Typography implementation rules
 
 When the site is implemented in Next.js:
 
 - load **Inter** through `next/font/google`;
 - use **Inter** as the single live HTML font family for the project;
 - do not import or introduce additional live web fonts without explicit approval;
-- implement typography through CSS custom properties or centralized style tokens that mirror the supplied system values;
-- preserve the supplied spacing and scale logic as the source of truth.
-
-### 9.8 Removed from scope
-
-The previously introduced `Cormorant Garamond` idea is removed. It was not part of the provided style system and should not be used for this project.
+- implement typography through CSS custom properties or centralized style tokens;
+- keep the style reference values available, but let the approved Paper Tiger mockups decide final headline weight, exact scale, and section-level typographic nuance.
 
 ---
 
-## 10. Motion direction
+## 11. Motion direction
 
 Motion is important, but it should serve the Paper Tiger world rather than dominate it.
 
@@ -574,7 +579,7 @@ Motion is important, but it should serve the Paper Tiger world rather than domin
 
 ---
 
-## 11. Performance and responsive requirements
+## 12. Performance and responsive requirements
 
 The final website must:
 
@@ -589,31 +594,31 @@ Desktop composition should be perfected first. Mobile should then be adapted int
 
 ---
 
-## 12. Current open decisions / TBD
+## 13. Current open decisions / TBD
 
 These points are intentionally not finalized yet:
 
-- exact production tech stack setup details;
 - final form submission method;
-- exact final image filenames within each asset directory where multiple export paths are still possible;
+- exact final image filenames for optional variants where multiple export paths are still possible;
 - whether any section gets a subtle video loop rather than static imagery + code motion;
 - final SEO metadata and social sharing assets;
 - final copy polish in selected paragraphs and offer cards if adjusted during implementation.
 
-The font system is **not** TBD. It is fixed as:
+The typography system itself is **not** TBD:
 
 ```txt
-Inter, following the supplied Macan-based Woset typography system.
+Inter, guided by the supplied Macan-based Woset reference and tuned to the approved Paper Tiger mockups.
 ```
 
 ---
 
-## 13. Immediate next step
+## 14. Immediate next step
 
-Use the detailed asset specification in:
+Use:
 
 ```txt
 docs/ASSET_MAP.md
+docs/EXPORT_CHECKLIST.md
 ```
 
 to prepare:
