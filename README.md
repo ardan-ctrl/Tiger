@@ -423,80 +423,107 @@ docs/ASSET_MAP.md
 
 ---
 
-## 9. Typography direction
+## 9. Typography system — final selection
 
 Typography is one of the main conversion and art-direction tools of the landing page. It must carry the same energy as the approved mockups: oversized, direct, editorial, warm, and unmistakably intentional.
 
-### 9.1 Primary font system
+The font choice is **fixed now**.
 
-The site should use **one dominant sans-serif family** for nearly all live HTML text:
+### 9.1 Final font pair
 
-- hero title;
-- major section headlines;
-- card headings;
+#### Primary sans-serif: `Inter`
+
+Use **Inter** for all main live HTML typography:
+
+- hero title `Paper Tiger`;
+- all major section headlines except the serif accent statement;
+- supporting subheads;
+- offer card headings;
+- body copy;
 - navigation;
-- form labels and form copy;
-- body text;
+- form labels, field text, buttons, and utility copy;
 - footer utility text.
 
-The primary sans-serif should feel:
+Why this choice:
 
-- bold and highly legible;
-- contemporary rather than techy;
-- clean but not cold;
-- friendly enough to live beside hand-drawn illustration;
-- strong enough to hold very large display sizes.
+- it is strong, clean, highly legible, and scalable from small UI labels to oversized display headlines;
+- it can achieve the bold black grotesk character seen in the approved mockups through correct weight, scale, and tracking;
+- it pairs naturally with hand-drawn illustration without becoming too whimsical or too corporate;
+- it is practical for a fast, responsive web build.
 
-The approved mockups should remain the **visual reference for weight, spacing, and overall typographic mood**.
+#### Serif accent: `Cormorant Garamond`
 
-### 9.2 Temporary implementation font if the final font is not locked yet
-
-Until the final approved web font is selected or supplied, use a high-quality open implementation fallback that stays visually close to the mockup mood.
-
-Recommended temporary direction:
-
-- **Inter / Inter Tight-style grotesk logic** for the live coded prototype;
-- heavy / bold styles for display text;
-- regular / medium styles for body, utility, navigation, and forms.
-
-This is a **temporary implementation choice**, not a permanent brand decision. Final substitution must preserve the approved visual character of the layouts.
-
-### 9.3 Display headline behaviour
-
-Large headlines should remain:
-
-- materially oversized;
-- black or near-black;
-- tightly set;
-- compact in line-height;
-- visually stable across screen sizes.
-
-Use responsive type sizing rather than fixed desktop-only sizes, but do not shrink headlines until they lose impact.
-
-Expected behaviour:
-
-- desktop: heroic oversized statements with strong authority;
-- tablet: still dominant and editorial;
-- mobile: large and dramatic, but carefully rewrapped instead of mechanically compressed.
-
-### 9.4 Serif accent rule
-
-A **single editorial serif accent** is allowed only where it matches the approved design language — most notably the statement:
+Use **Cormorant Garamond** only for the single editorial statement:
 
 ```txt
 So they want
 what you sell.
 ```
 
-This serif usage should:
+This serif line is a deliberate tonal shift. It adds a more desirable, editorial, slightly fashion-like temperature to that one section.
 
-- feel elegant, desirable, and slightly more fashion/editorial;
-- appear as a deliberate tonal shift;
-- remain rare.
+Do **not** spread Cormorant Garamond across random headlines, cards, forms, or CTA sections. Its power comes from appearing once.
 
-Do **not** spread serif typography across random headings or card content. The power of this contrast comes from scarcity.
+### 9.2 Typography usage map
 
-### 9.5 Handwritten and pencil lettering
+#### Inter — display headlines
+
+Use for:
+
+- `Paper Tiger` hero title;
+- `Sponsored episodes, brand integrations and custom animated ads.`;
+- `Ads people actually watch`;
+- `Your audience scrolls before most ads even begin.`;
+- `This attention could belong to your brand`;
+- `Paper Tiger knows what to do.`;
+- `I give people a reason to watch.`;
+- `Choose what you want Paper Tiger to do.`;
+- `Not sure which one fits?`;
+- `The reach is already big. The price is not.`;
+- `Drop your link.`;
+- `Get Paper Tiger working for your brand`.
+
+Recommended starting characteristics:
+
+- weight: `800` or `900` depending on the section scale;
+- line-height: tight and deliberate;
+- letter-spacing: slightly negative for large headlines where needed;
+- casing: sentence case, not all-caps.
+
+#### Inter — body and UI text
+
+Use for:
+
+- offer card body copy;
+- price support copy;
+- supporting explanatory lines;
+- form labels and field text;
+- header and footer utility text.
+
+Recommended starting characteristics:
+
+- body weight: `400`;
+- emphasis / labels: `500` or `600`;
+- body line-height: comfortable enough for card readability;
+- avoid making small copy feel cramped.
+
+#### Cormorant Garamond — one serif feature statement
+
+Use for:
+
+```txt
+So they want
+what you sell.
+```
+
+Recommended starting characteristics:
+
+- weight: `500` or `600`;
+- large display scale;
+- line-height: elegant and compact;
+- tracking: natural or only subtly adjusted.
+
+### 9.3 Handwritten and pencil lettering
 
 Handwritten details are part of the illustration system, not the core type system.
 
@@ -513,42 +540,35 @@ Preferred rule:
 
 The handwritten layer should stay imperfect, lightly naive, and human — not typographically “cute.”
 
-### 9.6 Typographic hierarchy
+### 9.4 Typographic hierarchy
 
 The intended hierarchy is:
 
 1. **Hero display text** — biggest and most dominant.
 2. **Major section statements** — giant conversational commercial claims.
-3. **Offer-card headings** — strong, very clear, still characterful.
-4. **Supporting copy** — compact and readable.
-5. **Form labels / navigation / metadata** — understated and precise.
+3. **One serif editorial statement** — rare tonal shift, only where specified.
+4. **Offer-card headings** — strong, very clear, still characterful.
+5. **Supporting copy** — compact and readable.
+6. **Form labels / navigation / metadata** — understated and precise.
 
 Avoid using too many sizes. The system should feel intentional, not improvised.
 
-### 9.7 Font implementation rules
+### 9.5 Font implementation rules
 
 When the site is implemented in Next.js:
 
-- use the built-in `next/font` system for production font loading;
-- prefer variable fonts when available and appropriate;
-- self-host the selected font through the project build rather than relying on external browser requests;
-- if a custom licensed font is selected, load it locally using the project font setup;
-- keep the live coded font system to **no more than two HTML font families**:
-  1. primary sans-serif;
-  2. optional serif accent.
+- load `Inter` and `Cormorant_Garamond` through `next/font/google`;
+- let Next.js self-host and optimize the font files through the build;
+- use only these **two HTML font families** on the live page;
+- handwritten styles remain image assets unless we explicitly decide otherwise.
 
-Handwritten styles remain image assets unless we explicitly decide otherwise.
+### 9.6 Licensing and production rule
 
-### 9.8 Licensing rule
+The chosen font pair is acceptable for this project because both are open-source web font families suitable for commercial use.
 
-Do **not** use any commercial or reference-site font in the live project unless its web use is legally cleared.
+Do not substitute them during implementation unless explicitly directed.
 
-Reference fonts may guide the mood, but implementation must use either:
-
-- an explicitly approved licensed brand font; or
-- a suitable open alternative during prototyping and, if approved, in production.
-
-Font licensing must be treated as part of production hygiene, not an afterthought.
+Do not pull random commercial reference fonts from the web or approximate them with additional third-party typefaces.
 
 ---
 
@@ -593,12 +613,17 @@ Desktop composition should be perfected first. Mobile should then be adapted int
 These points are intentionally not finalized yet:
 
 - exact production tech stack setup details;
-- final licensed / approved font selection;
 - final form submission method;
 - exact final image filenames within each asset directory where multiple export paths are still possible;
 - whether any section gets a subtle video loop rather than static imagery + code motion;
 - final SEO metadata and social sharing assets;
 - final copy polish in selected paragraphs and offer cards if adjusted during implementation.
+
+The font system is **not** TBD anymore. It is fixed as:
+
+```txt
+Inter + Cormorant Garamond
+```
 
 ---
 
