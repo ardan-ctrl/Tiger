@@ -293,6 +293,12 @@ Tiger/
 │
 ├── data/
 │
+├── design/
+│   └── layout-guides/
+│
+├── docs/
+│   └── ASSET_MAP.md
+│
 ├── lib/
 │
 ├── styles/
@@ -344,6 +350,23 @@ Reusable motion primitives such as animated headings, stagger reveals, and scrol
 
 Editable copy, card text, repeated labels, and other content that should stay easy to revise without hunting through layout files.
 
+### `design/layout-guides/`
+
+Reference-only flattened compositions of whole sections. These guides show the intended desktop arrangement of all elements together and are used to keep the coded implementation faithful to the approved design.
+
+They are **not** production webpage assets by default.
+
+### `docs/ASSET_MAP.md`
+
+Detailed production asset specification for the site, including:
+
+- which images to export;
+- which sections need a flattened layout guide;
+- which elements should also be exported separately;
+- how assets should be named;
+- which files belong in which folders;
+- where adaptive layout flexibility matters most.
+
 ### `lib/`
 
 Small utility functions, form helpers, and technical helpers as needed.
@@ -354,7 +377,7 @@ Organized style files if global styling is split beyond the app-level stylesheet
 
 ### `public/images/`
 
-All art assets used by the landing page, grouped by section.
+All production art assets used by the landing page, grouped by section.
 
 ---
 
@@ -365,11 +388,15 @@ All landing-page artwork should be prepared and uploaded into the already create
 ### Required principles
 
 - Store site imagery only inside `public/images/...`.
+- Store non-production flattened section mockups in `design/layout-guides/`.
 - Keep section-specific artwork in its matching folder.
 - Use descriptive file names.
 - Prefer web-friendly optimized formats, especially `.webp`, unless another format is required.
 - Character and decorative assets that need layering should be exported with transparent backgrounds.
 - Large scene compositions may be exported as a single image if the composition must remain locked.
+- For complex sections, prepare both:
+  - a full layout guide showing all elements together;
+  - separate production-ready elements for responsive coding and motion.
 - Text should generally remain in HTML, except for speech bubbles or decorative handwritten graphic details intentionally included as artwork.
 
 ### Current asset folders
@@ -386,6 +413,12 @@ public/images/formats/
 public/images/forms/
 public/images/price/
 public/images/decor/
+```
+
+The full section-by-section asset specification lives in:
+
+```txt
+docs/ASSET_MAP.md
 ```
 
 ---
@@ -433,7 +466,7 @@ These points are intentionally not finalized yet:
 - exact production tech stack setup details;
 - final font pairing;
 - final form submission method;
-- exact final image filenames within each asset directory;
+- exact final image filenames within each asset directory where multiple export paths are still possible;
 - whether any section gets a subtle video loop rather than static imagery + code motion;
 - final SEO metadata and social sharing assets;
 - final copy polish in selected paragraphs and offer cards if adjusted during implementation.
@@ -442,12 +475,14 @@ These points are intentionally not finalized yet:
 
 ## 12. Immediate next step
 
-Prepare the exact asset map for each landing-page section:
+Use the detailed asset specification in:
 
-- which image must be exported;
-- whether it should be transparent;
-- which folder it belongs in;
-- how it should be named;
-- whether the composition should be split into separate elements or exported as one locked artwork.
+```txt
+docs/ASSET_MAP.md
+```
 
-This asset map will be the next production document used before implementation begins.
+to prepare:
+
+- flattened section layout guides for composition fidelity;
+- separate production-ready artwork elements for responsive implementation;
+- cleanly named assets placed into the correct project folders.
