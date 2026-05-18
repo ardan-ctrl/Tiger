@@ -19,9 +19,8 @@ When implementation choices need to be made, follow this order:
 3. **`docs/DESIGN_SYSTEM.md`** — typography, color, spacing, borders, forms, cards, and UI behaviour.
 4. **`docs/ASSET_MAP.md`** — artwork-packaging strategy by section.
 5. **`docs/EXPORT_CHECKLIST.md`** — exact export checklist, filenames, and folder placement.
-6. **Uploaded Woset style reference** — background design reference that informed the system above; use it only through the project-specific decisions already captured in the docs.
 
-The implementation must stay faithful to the **Paper Tiger mockups first**. Do not use any source to flatten, cool down, over-systematize, or genericize the approved designs.
+The implementation must stay faithful to the **Paper Tiger mockups first**. Do not flatten, cool down, over-systematize, or genericize the approved designs.
 
 ---
 
@@ -115,7 +114,7 @@ The hero uses multiple Paper Tiger visual vignettes around the title.
 
 Key motion idea:
 - the large `Paper Tiger` title assembles / appears letter by letter;
-- the effect should echo the typographic spirit of the Woset footer, adapted to this hero.
+- the title entrance should feel playful, art-directed, and consistent with the site’s hand-crafted typographic world.
 
 ### 3. Offer statement
 ```txt
@@ -331,7 +330,7 @@ Priority moments:
 2. **Section reveals** — large statements and artwork enter with restrained timing.
 3. **Micro-motion** for a few illustrated elements where it adds charm.
 4. **Price notifications** if exported as separate assets.
-5. **Footer typography animation** inspired by the Woset lettering treatment.
+5. **Footer typography animation** — a lively letter-based treatment consistent with the site’s hand-crafted graphic language.
 
 Avoid frantic bounce, excessive parallax, readability loss, and gimmicky motion.
 
