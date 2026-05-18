@@ -14,13 +14,14 @@ The site’s job is to turn brand interest into **high-intent inbound collaborat
 
 When implementation choices need to be made, follow this order:
 
-1. **Approved Paper Tiger mockups and section layout guides** — primary authority for composition, proportions, visual rhythm, typography weight, color temperature, and overall feeling.
-2. **This README** — project-level product, structural, and build rules.
-3. **`docs/DESIGN_SYSTEM.md`** — typography, color, spacing, borders, forms, cards, and UI behaviour.
-4. **`docs/ASSET_MAP.md`** — artwork-packaging strategy by section.
-5. **`docs/EXPORT_CHECKLIST.md`** — exact export checklist, filenames, and folder placement.
+1. **Approved Paper Tiger source mockups in `design/source-mockups/`** — primary authority for the intended section visuals, composition, proportions, and page feeling.
+2. **Approved section layout guides, if separately provided in `design/layout-guides/`** — secondary composition references.
+3. **This README** — project-level product, structural, and build rules.
+4. **`docs/DESIGN_SYSTEM.md`** — typography, color, spacing, borders, forms, cards, and UI behaviour.
+5. **`docs/ASSET_MAP.md`** — artwork-packaging strategy by section.
+6. **`docs/EXPORT_CHECKLIST.md`** — exact export checklist, filenames, and folder placement where still relevant.
 
-The implementation must stay faithful to the **Paper Tiger mockups first**. Do not flatten, cool down, over-systematize, or genericize the approved designs.
+The implementation must stay faithful to the **Paper Tiger source mockups first**. Do not flatten, cool down, over-systematize, or genericize the approved designs.
 
 ---
 
@@ -45,11 +46,13 @@ The site must feel:
 
 ### Do
 
-- Use the approved Paper Tiger mockups as the **primary visual reference**.
+- Use the approved Paper Tiger source mockups as the **primary visual reference**.
 - Build a custom, highly visual single-page landing page.
+- Interpret the mockups intelligently: recreate the page as responsive HTML/CSS plus image assets, not as a stack of screenshot images.
+- Where possible, extract, isolate, mask, or rebuild necessary artwork from the source mockups in order to produce a faithful responsive implementation.
 - Keep major site copy as real HTML text wherever possible.
 - Use forms as real interactive UI, not baked into flattened images.
-- Use prepared production artwork from `public/images/...`.
+- Use prepared production artwork from `public/images/...` when available.
 - Use flattened section guides from `design/layout-guides/` only as layout references, not as screenshots pasted into the page.
 - Build desktop fidelity first, then adapt thoughtfully for tablet and mobile.
 - Add motion only where it strengthens the Paper Tiger world and conversion flow.
@@ -229,6 +232,7 @@ Tiger/
 ├── data/
 │
 ├── design/
+│   ├── source-mockups/
 │   └── layout-guides/
 │
 ├── docs/
@@ -281,8 +285,11 @@ Reusable motion primitives such as animated headings, stagger reveals, and scrol
 ### `data/`
 Editable copy, card text, repeated labels, and other content that should stay easy to revise without hunting through layout files.
 
+### `design/source-mockups/`
+Full approved section mockups. These are the **primary visual implementation input** and should be used to reconstruct the site faithfully.
+
 ### `design/layout-guides/`
-Flattened, reference-only section compositions showing intended desktop arrangement. These are implementation guides, not production page images.
+Optional flattened, reference-only section compositions showing intended desktop arrangement when a separate layout guide is useful.
 
 ### `docs/DESIGN_SYSTEM.md`
 The active visual system for this project: typography, colors, spacing, borders, forms, cards, and interface behaviour.
@@ -291,7 +298,7 @@ The active visual system for this project: typography, colors, spacing, borders,
 The artwork strategy: which sections need full guides, separate responsive assets, or both.
 
 ### `docs/EXPORT_CHECKLIST.md`
-The operational export list: exact files, names, folders, and section-by-section requirements.
+The operational export list: exact files, names, folders, and section-by-section requirements. This becomes secondary if source mockups are sufficient for a given section.
 
 ### `public/images/`
 All production artwork used by the live website, grouped by section.
@@ -300,18 +307,20 @@ All production artwork used by the live website, grouped by section.
 
 ## 8. Asset rules
 
+- Store approved full section mockups inside `design/source-mockups/`.
 - Store production imagery only inside `public/images/...`.
-- Store flattened section references only inside `design/layout-guides/`.
+- Store optional flattened section layout references inside `design/layout-guides/`.
 - Use descriptive file names.
 - Prefer optimized `.webp` for production artwork unless another format is specifically needed.
 - Export layered characters, props, bubbles, and decor with transparent backgrounds when they need independent placement.
 - A large illustrated scene may remain one locked composition when that is the most faithful and efficient implementation choice.
-- For complex sections, prepare both:
-  - a full layout guide showing the intended composition;
-  - separate production-ready assets for responsive implementation and motion.
+- For complex sections, the preferred implementation path is now:
+  1. understand the approved source mockup;
+  2. recreate the section responsively from that mockup;
+  3. derive or prepare only the production assets that are genuinely needed.
 - Major site copy remains HTML, except for speech bubbles and intentionally illustrated handwritten details.
 
-Detailed asset instructions live in:
+Detailed asset guidance lives in:
 
 ```txt
 docs/ASSET_MAP.md
@@ -375,9 +384,14 @@ Already fixed in project docs:
 Before coding begins, use:
 
 ```txt
+design/source-mockups/
 docs/DESIGN_SYSTEM.md
 docs/ASSET_MAP.md
 docs/EXPORT_CHECKLIST.md
 ```
 
-together with the approved Paper Tiger mockups and uploaded layout guides.
+together with any optional layout guides uploaded to:
+
+```txt
+design/layout-guides/
+```
